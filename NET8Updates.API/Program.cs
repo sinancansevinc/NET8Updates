@@ -1,3 +1,5 @@
+using Microsoft.Extensions.DependencyInjection;
+using NET8Updates.API.Repositories;
 using NET8Updates.API.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,6 +14,9 @@ builder.Services.AddControllers();
 
 
 builder.Services.AddKeyedTransient<IUserService, UserService>("user");
+builder.Services.AddScoped<IProductRepository, ProductRepository>();
+builder.Services.AddScoped<IProductService, ProductService>();
+
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

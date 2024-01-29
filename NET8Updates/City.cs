@@ -19,7 +19,5 @@ namespace NET8Updates
         public int Id { get; set; }
         public string Name { get; set; }
         public GoogleMapPoint Point { get; set; }
-
-
     }
 }
